@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vital Signs Monitoring System - UML Diagrams</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        .section {
+            background: white;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .features-list {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .features-list h3 {
+            color: #2980b9;
+            margin-top: 0;
+        }
+        .features-list ol {
+            line-height: 1.8;
+        }
+        .diagram-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+        .diagram-img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .description {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+        }
+        .key-points {
+            background: #fff9e6;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #f39c12;
+        }
+        .key-points ul {
+            margin: 10px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #7f8c8d;
+            border-top: 1px solid #ddd;
+        }
+        .toc {
+            background: #34495e;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .toc a {
+            color: #3498db;
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+        }
+        .toc a:hover {
+            color: #5dade2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vital Signs Monitoring System</h1>
+    <h2 style="text-align: center; color: #7f8c8d;">UML Diagrams Assignment</h2>
+
+    <div class="toc">
+        <h3>Table of Contents</h3>
+        <a href="#features">Five Major Features</a>
+        <a href="#usecase">1. Use Case Diagram</a>
+        <a href="#sequence1">2. Sequence Diagram: Alert Generation</a>
+        <a href="#sequence2">3. Sequence Diagram: Device Lock/Unlock</a>
+    </div>
+
+    <div class="section" id="features">
+        <h2>Five Major Features</h2>
+        <div class="features-list">
+            <ol>
+                <li><strong>Real-Time Vital Signs Display</strong> - Display current patient vital signs including oxygen saturation, heart rate, pulse, blood sugar level, and blood pressure on the device screen with automatic refresh capabilities.</li>
+                
+                <li><strong>Alert and Notification System</strong> - Generate audible and visual alerts when vital signs fall outside safe ranges, with automatic notifications sent to nurse station computers including patient and room details.</li>
+                
+                <li><strong>Device Security and Access Control</strong> - Provide physical button lock functionality to restrict device usage to authorized personnel only, preventing unauthorized changes to settings or patient data.</li>
+                
+                <li><strong>Historical Data Management</strong> - Store and retrieve vital signs history for configurable time periods, allowing healthcare providers to track patient trends and make informed medical decisions.</li>
+                
+                <li><strong>Patient Profile Management</strong> - Maintain patient information including name, room number, medical history, and custom threshold settings for vital sign alerts based on individual patient needs.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="section" id="usecase">
+        <h2>1. Use Case Diagram</h2>
+        
+        <div class="description">
+            <h3>Description</h3>
+            <p>This use case diagram illustrates all actors in the Vital Signs Monitoring System and their interactions with various system functionalities. The diagram shows both human actors (Nurse, Physician, Medical Technician) and system actors (Nurse Station System, Data Storage System).</p>
+        </div>
+
+        <div class="diagram-container">
+            <svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+                <!-- System Boundary -->
+                <rect x="250" y="50" width="700" height="700" fill="none" stroke="#333" stroke-width="2" rx="10"/>
+                <text x="550" y="35" font-size="18" font-weight="bold" text-anchor="middle">Vital Signs Monitoring System</text>
+                
+                <!-- Actors Left Side -->
+                <!-- Nurse -->
+                <circle cx="80" cy="150" r="25" fill="#ADD8E6" stroke="#000"/>
+                <line x1="80" y1="175" x2="80" y2="220" stroke="#000" stroke-width="2"/>
+                <line x1="80" y1="190" x2="50" y2="210" stroke="#000" stroke-width="2"/>
+                <line x1="80" y1="190" x2="110" y2="210" stroke="#000" stroke-width="2"/>
+                <line x1="80" y1="220" x2="55" y2="250" stroke="#000" stroke-width="2"/>
+                <line x1="80" y1="220" x2="105" y2="250" stroke="#000" stroke-width="2"/>
+                <text x="80" y="270" font-size="12" font-weight="bold" text-anchor="middle">Nurse</text>
+                
+                <!-- Physician -->
+                <circle cx="80" cy="350" r="25" fill="#ADD8E6" stroke="#000"/>
+                <line x1="80" y1="375" x2="80" y2="420" stroke="#000" stroke-width="2"/>
+                <line x1="80" y1="390" x2="50" y2="410" stroke="#000" stroke-width="2"/>
+                <line x1="80" y1="390" x2="110" y2="410" stroke="#000" stroke-width="2"/>
+                <line x1="80" y1="420" x2="55" y2="450" stroke="#000" stroke-width="2"/>
+                <line x1="80" y1="420" x2="105" y2="450" stroke="#000" stroke-width="2"/>
+                <text x="80" y="470" font-size="12" font-weight="bold" text-anchor="middle">Physician</text>
+                
+                <!-- Medical Technician -->
+                <circle cx="80" cy="550" r="25" fill="#ADD8E6" stroke="#000"/>
+                <line x1="80" y1="575" x2="80" y2="620" stroke="#000" stroke-width="2"/>
+                <line x1="80" y1="590" x2="50" y2="610" stroke="#000" stroke-width="2"/>
+                <line x1="80" y1="590" x2="110" y2="610" stroke="#000" stroke-width="2"/>
+                <line x1="80" y1="620" x2="55" y2="650" stroke="#000" stroke-width="2"/>
+                <line x1="80" y1="620" x2="105" y2="650" stroke="#000" stroke-width="2"/>
+                <text x="80" y="670" font-size="12" font-weight="bold" text-anchor="middle">Medical Tech</text>
+                
+                <!-- Actors Right Side -->
+                <!-- Nurse Station System -->
+                <rect x="1020" y="250" width="140" height="60" fill="#90EE90" stroke="#000" stroke-width="2" rx="5"/>
+                <text x="1090" y="275" font-size="11" font-weight="bold" text-anchor="middle">Nurse Station</text>
+                <text x="1090" y="290" font-size="11" font-weight="bold" text-anchor="middle">System</text>
+                
+                <!-- Database -->
+                <rect x="1020" y="450" width="140" height="60" fill="#90EE90" stroke="#000" stroke-width="2" rx="5"/>
+                <text x="1090" y="475" font-size="11" font-weight="bold" text-anchor="middle">Data Storage</text>
+                <text x="1090" y="490" font-size="11" font-weight="bold" text-anchor="middle">System</text>
+                
+                <!-- Use Cases -->
+                <!-- Row 1 -->
+                <ellipse cx="400" cy="120" rx="85" ry="35" fill="#FFE4B5" stroke="#000" stroke-width="1.5"/>
+                <text x="400" y="118" font-size="10" text-anchor="middle">View Real-Time</text>
+                <text x="400" y="130" font-size="10" text-anchor="middle">Vital Signs</text>
+                
+                <ellipse cx="600" cy="120" rx="75" ry="30" fill="#FFE4B5" stroke="#000" stroke-width="1.5"/>
+                <text x="600" y="118" font-size="10" text-anchor="middle">Monitor Oxygen</text>
+                <text x="600" y="130" font-size="10" text-anchor="middle">Saturation</text>
+                
+                <ellipse cx="800" cy="120" rx="75" ry="30" fill="#FFE4B5" stroke="#000" stroke-width="1.5"/>
+                <text x="800" y="118" font-size="10" text-anchor="middle">Monitor Heart</text>
+                <text x="800" y="130" font-size="10" text-anchor="middle">Rate/Pulse</text>
+                
+                <!-- Row 2 -->
+                <ellipse cx="400" cy="220" rx="75" ry="30" fill="#FFE4B5" stroke="#000" stroke-width="1.5"/>
+                <text x="400" y="218" font-size="10" text-anchor="middle">Monitor Blood</text>
+                <text x="400" y="230" font-size="10" text-anchor="middle">Sugar Level</text>
+                
+                <ellipse cx="600" cy="220" rx="75" ry="30" fill="#FFE4B5" stroke="#000" stroke-width="1.5"/>
+                <text x="600" y="218" font-size="10" text-anchor="middle">Monitor Blood</text>
+                <text x="600" y="230" font-size="10" text-anchor="middle">Pressure</text>
+                
+                <ellipse cx="800" cy="220" rx="75" ry="30" fill="#FFE4B5" stroke="#000" stroke-width="1.5"/>
+                <text x="800" y="218" font-size="10" text-anchor="middle">Configure Alert</text>
+                <text x="800" y="230" font-size="10" text-anchor="middle">Thresholds</text>
+                
+                <!-- Row 3 -->
+                <ellipse cx="400" cy="320" rx="70" ry="30" fill="#FFE4B5" stroke="#000" stroke-width="1.5"/>
+                <text x="400" y="318" font-size="10" text-anchor="middle">Acknowledge</text>
+                <text x="400" y="330" font-size="10" text-anchor="middle">Alerts</text>
+                
+                <ellipse cx="600" cy="320" rx="70" ry="30" fill="#FFE4B5" stroke="#000" stroke-width="1.5"/>
+                <text x="600" y="318" font-size="10" text-anchor="middle">Send Alert</text>
+                <text x="600" y="330" font-size="10" text-anchor="middle">Notifications</text>
+                
+                <ellipse cx="800" cy="320" rx="70" ry="30" fill="#FFE4B5" stroke="#000" stroke-width="1.5"/>
+                <text x="800" y="318" font-size="10" text-anchor="middle">Lock Device</text>
+                <text x="800" y="330" font-size="10" text-anchor="middle">Buttons</text>
+                
+                <!-- Row 4 -->
+                <ellipse cx="400" cy="420" rx="70" ry="30" fill="#FFE4B5" stroke="#000" stroke-width="1.5"/>
+                <text x="400" y="418" font-size="10" text-anchor="middle">Unlock Device</text>
+                <text x="400" y="430" font-size="10" text-anchor="middle">Buttons</text>
+                
+                <ellipse cx="600" cy="420" rx="70" ry="30" fill="#FFE4B5" stroke="#000" stroke-width="1.5"/>
+                <text x="600" y="418" font-size="10" text-anchor="middle">Authenticate</text>
+                <text x="600" y="430" font-size="10" text-anchor="middle">User</text>
+                
+                <ellipse cx="800" cy="420" rx="70" ry="30" fill="#FFE4B5" stroke="#000" stroke-width="1.5"/>
+                <text x="800" y="418" font-size="10" text-anchor="middle">View Patient</text>
+                <text x="800" y="430" font-size="10" text-anchor="middle">History</text>
+                
+                <!-- Row 5 -->
+                <ellipse cx="400" cy="520" rx="70" ry="30" fill="#FFE4B5" stroke="#000" stroke-width="1.5"/>
+                <text x="400" y="518" font-size="10" text-anchor="middle">Generate</text>
+                <text x="400" y="530" font-size="10" text-anchor="middle">Reports</text>
+                
+                <ellipse cx="600" cy="520" rx="75" ry="30" fill="#FFE4B5" stroke="#000" stroke-width="1.5"/>
+                <text x="600" y="518" font-size="10" text-anchor="middle">Add/Update</text>
+                <text x="600" y="530" font-size="10" text-anchor="middle">Patient Profile</text>
+                
+                <ellipse cx="800" cy="520" rx="75" ry="30" fill="#FFE4B5" stroke="#000" stroke-width="1.5"/>
+                <text x="800" y="518" font-size="10" text-anchor="middle">Store Vital Signs</text>
+                <text x="800" y="530" font-size="10" text-anchor="middle">Data</text>
+                
+                <!-- Row 6 -->
+                <ellipse cx="600" cy="620" rx="75" ry="30" fill="#FFE4B5" stroke="#000" stroke-width="1.5"/>
+                <text x="600" y="618" font-size="10" text-anchor="middle">Retrieve Historical</text>
+                <text x="600" y="630" font-size="10" text-anchor="middle">Data</text>
+                
+                <!-- Connections - Nurse -->
+                <line x1="110" y1="200" x2="315" y2="120" stroke="#0000FF" stroke-width="2"/>
+                <line x1="110" y1="200" x2="330" y2="320" stroke="#0000FF" stroke-width="2"/>
+                <line x1="110" y1="200" x2="730" y2="320" stroke="#0000FF" stroke-width="2"/>
+                <line x1="110" y1="200" x2="330" y2="420" stroke="#0000FF" stroke-width="2"/>
+                <line x1="110" y1="200" x2="730" y2="420" stroke="#0000FF" stroke-width="2"/>
+                
+                <!-- Connections - Physician -->
+                <line x1="110" y1="400" x2="315" y2="120" stroke="#008000" stroke-width="2"/>
+                <line x1="110" y1="400" x2="725" y2="220" stroke="#008000" stroke-width="2"/>
+                <line x1="110" y1="400" x2="730" y2="420" stroke="#008000" stroke-width="2"/>
+                <line x1="110" y1="400" x2="330" y2="520" stroke="#008000" stroke-width="2"/>
+                <line x1="110" y1="400" x2="525" y2="520" stroke="#008000" stroke-width="2"/>
+                
+                <!-- Connections - Medical Tech -->
+                <line x1="110" y1="600" x2="315" y2="120" stroke="#800080" stroke-width="2"/>
+                <line x1="110" y1="600" x2="730" y2="320" stroke="#800080" stroke-width="2"/>
+                <line x1="110" y1="600" x2="330" y2="420" stroke="#800080" stroke-width="2"/>
+                
+                <!-- Connections - External Systems -->
+                <line x1="670" y1="320" x2="1020" y2="280" stroke="#FF0000" stroke-width="2"/>
+                <line x1="875" y1="520" x2="1020" y2="480" stroke="#FFA500" stroke-width="2"/>
+                <line x1="1020" y1="480" x2="675" y2="620" stroke="#FFA500" stroke-width="2"/>
+                
+                <!-- Include relationships (dashed) -->
+                <line x1="485" y1="120" x2="525" y2="120" stroke="#666" stroke-width="1" stroke-dasharray="5,5"/>
+                <text x="505" y="110" font-size="8" text-anchor="middle">«include»</text>
+                
+                <line x1="485" y1="120" x2="525" y2="220" stroke="#666" stroke-width="1" stroke-dasharray="5,5"/>
+                <line x1="485" y1="155" x2="400" y2="190" stroke="#666" stroke-width="1" stroke-dasharray="5,5"/>
+                <line x1="485" y1="155" x2="600" y2="190" stroke="#666" stroke-width="1" stroke-dasharray="5,5"/>
+                
+                <line x1="730" y1="320" x2="530" y2="420" stroke="#666" stroke-width="1" stroke-dasharray="5,5"/>
+                <text x="630" y="360" font-size="8" text-anchor="middle">«include»</text>
+                
+                <line x1="330" y1="420" x2="530" y2="420" stroke="#666" stroke-width="1" stroke-dasharray="5,5"/>
+                <text x="430" y="410" font-size="8" text-anchor="middle">«include»</text>
+                
+                <line x1="730" y1="420" x2="675" y2="620" stroke="#666" stroke-width="1" stroke-dasharray="5,5"/>
+                <text x="720" y="530" font-size="8" text-anchor="middle">«include»</text>
+            </svg>
+        </div>
+
+        <div class="key-points">
+            <h3>Key Actors and Their Interactions:</h3>
+            <ul>
+                <li><strong>Nurse:</strong> Views vital signs, acknowledges alerts, locks/unlocks device buttons, views patient history</li>
+                <li><strong>Physician:</strong> Views vital signs, configures alert thresholds, views history, generates reports, manages patient profiles</li>
+                <li><strong>Medical Technician:</strong> Views vital signs, locks/unlocks device buttons</li>
+                <li><strong>Nurse Station System:</strong> Receives alert notifications from the monitoring device</li>
+                <li><strong>Data Storage System:</strong> Stores and retrieves vital signs data and historical information</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section" id="sequence1">
+        <h2>2. Sequence Diagram: Alert Generation and Notification</h2>
+        
+        <div class="description">
+            <h3>Scenario</h3>
+            <p>This sequence diagram illustrates the complete workflow when a patient's oxygen saturation drops below the safe threshold (90%). It shows the interactions between the sensor, monitoring device, alert manager, alarm system, nurse station, and database.</p>
+        </div>
+
+        <div class="diagram-container">
+            <svg width="1400" height="1200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Title -->
+                <text x="700" y="30" font-size="20" font-weight="bold" text-anchor="middle">Sequence Diagram: Alert Generation and Notification</text>
+                <text x="700" y="55" font-size="14" fill="#666" text-anchor="middle">Scenario: Patient's O2 saturation drops below threshold</text>
+                
+                <!-- Actors/Objects -->
+                <rect x="50" y="80" width="100" height="50" fill="#ADD8E6" stroke="#000" stroke-width="2" rx="5"/>
+                <text x="100" y="110" font-size="12" font-weight="bold" text-anchor="middle">Sensor</text>
+                
+                <rect x="230" y="80" width="100" height="50" fill="#ADD8E6" stroke="#000" stroke-width="2" rx="5"/>
+                <text x="280" y="100" font-size="11" font-weight="bold" text-anchor="middle">Monitoring</text>
+                <text x="280" y="115" font-size="11" font-weight="bold" text-anchor="middle">Device</text>
+                
+                <rect x="430" y="80" width="100" height="50" fill="#ADD8E6" stroke="#000" stroke-width="2" rx="5"/>
+                <text x="480" y="100" font-size="11" font-weight="bold" text-anchor="middle">Alert</text>
+                <text x="480" y="115" font-size="11" font-weight="bold" text-anchor="middle">Manager</text>
+                
+                <rect x="630" y="80" width="100" height="50" fill="#ADD8E6" stroke="#000" stroke-width="2" rx="5"/>
+                <text x="680" y="100" font-size="11" font-weight="bold" text-anchor="middle">Alarm</text>
+                <text x="680" y="115" font-size="11" font-weight="bold" text-anchor="middle">Speaker</text>
+                
+                <rect x="830" y="80" width="100" height="50" fill="#ADD8E6" stroke="#000" stroke-width="2" rx="5"/>
+                <text x="880" y="100" font-size="11" font-weight="bold" text-anchor="middle">Nurse</text>
+                <text x="880" y="115" font-size="11" font-weight="bold" text-anchor="middle">Station</text>
+                
+                <rect x="1030" y="80" width="100" height="50" fill="#ADD8E6" stroke="#000" stroke-width="2" rx="5"/>
+                <text x="1080" y="110" font-size="12" font-weight="bold" text-anchor="middle">Database</text>
+                
+                <!-- Lifelines (dashed) -->
+                <line x1="100" y1="130" x2="100" y2="1100" stroke="#999" stroke-width="1" stroke-dasharray="5,5"/>
+                <line x1="280" y1="130" x2="280" y2="1100" stroke="#999" stroke-width="1" stroke-dasharray="5,5"/>
+                <line x1="480" y1="130" x2="480" y2="1100" stroke="#999" stroke-width="1" stroke-dasharray="5,5"/>
+                <line x1="680" y1="130" x2="680" y2="1100" stroke="#999" stroke-width="1" stroke-dasharray="5,5"/>
+                <line x1="880" y1="130" x2="880" y2="1100" stroke="#999" stroke-width="1" stroke-dasharray="5,5"/>
+                <line x1="1080" y1="130" x2="1080" y2="1100" stroke="#999" stroke-width="1" stroke-dasharray="5,5"/>
+                
+                <!-- Messages -->
+                <!-- 1. Read O2 Level -->
+                <line x1="100" y1="180" x2="280" y2="180" stroke="#0000FF" stroke-width="2" marker-end="url(#arrowblue)"/>
+                <text x="190" y="170" font-size="11" text-anchor="middle">Read O2 Level</text>
+                
+                <!-- 2. Return 88% -->
+                <line x1="280" y1="220" x2="100" y2="220" stroke="#0000FF" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowblue)"/>
+                <text x="190" y="210" font-size="11" text-anchor="middle">Return: 88%</text>
+                
+                <!-- Note: Threshold check -->
+                <rect x="200" y="240" width="160" height="30" fill="#FFFACD" stroke="#FFA500" stroke-width="1"/>
+                <text x="280" y="260" font-size="10" fill="#FF0000" text-anchor="middle">[O2 &lt; 90% threshold]</text>
+                
+                <!-- 3. Trigger Alert -->
+                <line x1="280" y1="300" x2="480" y2="300" stroke="#0000FF" stroke-width="2" marker-end="url(#arrowblue)"/>
+                <text x="380" y="290" font-size="11" text-anchor="middle">Trigger Alert (O2: 88%)</text>
+                
+                <!-- 4. Activate Alarm -->
+                <line x1="480" y1="360" x2="680" y2="360" stroke="#0000FF" stroke-width="2" marker-end="url(#arrowblue)"/>
+                <text x="580" y="350" font-size="11" text-anchor="middle">Activate Alarm</text>
+                <text x="580" y="380" font-size="10" fill="#666" text-anchor="middle">(85 dB)</text>
+                
+                <!-- 5. Send Notification -->
+                <line x1="480" y1="430" x2="880" y2="430" stroke="#0000FF" stroke-width="2" marker-end="url(#arrowblue)"/>
+                <text x="680" y="420" font-size="11" text-anchor="middle">Send Notification</text>
+                <rect x="550" y="440" width="260" height="30" fill="#FFFACD" stroke="#FFA500" stroke-width="1"/>
+                <text x="680" y="460" font-size="9" fill="#FF0000" text-anchor="middle">(Room 305, John Doe, O2: 88%)</text>
+                
+                <!-- 6. Display Alert -->
+                <line x1="880" y1="520" x2="880" y2="560" stroke="#0000FF" stroke-width="2"/>
+                <rect x="830" y="520" width="100" height="40" fill="#FFE4B5" stroke="#000" stroke-width="1"/>
+                <text x="880" y="545" font-size="10" font-weight="bold" text-anchor="middle">Display Alert</text>
+                
+                <!-- 7. Log Alert Event -->
+                <line x1="480" y1="620" x2="1080" y2="620" stroke="#0000FF" stroke-width="2" marker-end="url(#arrowblue)"/>
+                <text x="780" y="610" font-size="11" text-anchor="middle">Log Alert Event</text>
+                <text x="780" y="640" font-size="9" fill="#666" text-anchor="middle">(Timestamp, Patient ID, O2: 88%, Status)</text>
+                
+                <!-- 8. Confirm Logged -->
+                <line x1="1080" y1="680" x2="480" y2="680" stroke="#0000FF" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowblue)"/>
+                <text x="780" y="670" font-size="11" text-anchor="middle">Confirm Logged</text>
+                
+                <!-- 9. Alert Active -->
+                <line x1="480" y1="740" x2="280" y2="740" stroke="#0000FF" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowblue)"/>
+                <text x="380" y="730" font-size="11" text-anchor="middle">Alert Active</text>
+                
+                <!-- Note: Nurse acknowledges -->
+                <rect x="750" y="790" width="260" height="30" fill="#FFFACD" stroke="#FFA500" stroke-width="1"/>
+                <text x="880" y="810" font-size="10" fill="#FF0000" text-anchor="middle">[Nurse acknowledges at station]</text>
+                
+                <!-- 10. Acknowledge Alert -->
+                <line x1="880" y1="860" x2="480" y2="860" stroke="#0000FF" stroke-width="2" marker-end="url(#arrowblue)"/>
+                <text x="680" y="850" font-size="11" text-anchor="middle">Acknowledge Alert</text>
+                
+                <!-- 11. Stop Alarm -->
+                <line x1="480" y1="920" x2="680" y2="920" stroke="#0000FF" stroke-width="2" marker-end="url(#arrowblue)"/>
+                <text x="580" y="910" font-size="11" text-anchor="middle">Stop Alarm</text>
+                
+                <!-- 12. Update Status -->
+                <line x1="480" y1="980" x2="1080" y2="980" stroke="#0000FF" stroke-width="2" marker-end="url(#arrowblue)"/>
+                <text x="780" y="970" font-size="11" text-anchor="middle">Update Status</text>
+                <text x="780" y="1000" font-size="9" fill="#666" text-anchor="middle">(Acknowledged by Nurse ID, Time)</text>
+                
+                <!-- Arrow marker definition -->
+                <defs>
+                    <marker id="arrowblue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L0,6 L9,3 z" fill="#0000FF"/>
+                    </marker>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="key-points">
+            <h3>Key Steps:</h3>
+            <ol>
+                <li>Sensor reads oxygen level (88%)</li>
+                <li>Monitoring device detects value below threshold (90%)</li>
+                <li>Alert Manager triggers alarm at 85 decibels</li>
+                <li>Notification sent to Nurse Station with patient details (Room 305, John Doe, O2: 88%)</li>
+                <li>Alert event logged to database with timestamp and patient information</li>
+                <li>Nurse acknowledges alert from station</li>
+                <li>Alarm stops and status updated in database</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="section" id="sequence2">
+        <h2>3. Sequence Diagram: Device Button Lock/Unlock</h2>
+        
+        <div class="description">
+            <h3>Scenario</h3>
+            <p>This sequence diagram shows the security workflow when a physician locks the device buttons to prevent unauthorized access. It includes authentication, button disabling, logging, and handling of unauthorized access attempts.</p>
+        </div>
+
+        <div class="diagram-container">
+            <svg width="1400" height="1300" xmlns="http://www.w3.org/2000/svg">
+                <!-- Title -->
+                <text x="700" y="30" font-size="20" font-weight="bold" text-anchor="middle">Sequence Diagram: Device Button Lock/Unlock</text>
+                <text x="700" y="55" font-size="14" fill="#666" text-anchor="middle">Scenario: Physician locks device buttons</text>
+                
+                <!-- Actors/Objects -->
+                <rect x="30" y="80" width="100" height="50" fill="#90EE90" stroke="#000" stroke-width="2" rx="5"/>
+                <text x="80" y="110" font-size="12" font-weight="bold" text-anchor="middle">Physician</text>
+                
+                <rect x="210" y="80" width="100" height="50" fill="#90EE90" stroke="#000" stroke-width="2" rx="5"/>
+                <text x="260" y="110" font-size="12" font-weight="bold" text-anchor="middle">Device UI</text>
+                
+                <rect x="410" y="80" width="120" height="50" fill="#90EE90" stroke="#000" stroke-width="2" rx="5"/>
+                <text x="470" y="100" font-size="11" font-weight="bold" text-anchor="middle">Authentication</text>
+                <text x="470" y="115" font-size="11" font-weight="bold" text-anchor="middle">System</text>
+                
+                <rect x="630" y="80" width="100" height="50" fill="#90EE90" stroke="#000" stroke-width="2" rx="5"/>
+                <text x="680" y="100" font-size="11" font-weight="bold" text-anchor="middle">Button</text>
+                <text x="680" y="115" font-size="11" font-weight="bold" text-anchor="middle">Controller</text>
+                
+                <rect x="830" y="80" width="100" height="50" fill="#90EE90" stroke="#000" stroke-width="2" rx="5"/>
+                <text x="880" y="110" font-size="12" font-weight="bold" text-anchor="middle">Database</text>
+                
+                <rect x="1030" y="80" width="120" height="50" fill="#90EE90" stroke="#000" stroke-width="2" rx="5"/>
+                <text x="1090" y="100" font-size="11" font-weight="bold" text-anchor="middle">Physical</text>
+                <text x="1090" y="115" font-size="11" font-weight="bold" text-anchor="middle">Buttons</text>
+                
+                <!-- Lifelines -->
+                <line x1="80" y1="130" x2="80" y2="1200" stroke="#999" stroke-width="1" stroke-dasharray="5,5"/>
+                <line x1="260" y1="130" x2="260" y2="1200" stroke="#999" stroke-width="1" stroke-dasharray="5,5"/>
+                <line x1="470" y1="130" x2="470" y2="1200" stroke="#999" stroke-width="1" stroke-dasharray="5,5"/>
+                <line x1="680" y1="130" x2="680" y2="1200" stroke="#999" stroke-width="1" stroke-dasharray="5,5"/>
+                <line x1="880" y1="130" x2="880" y2="1200" stroke="#999" stroke-width="1" stroke-dasharray="5,5"/>
+                <line x1="1090" y1="130" x2="1090" y2="1200" stroke="#999" stroke-width="1" stroke-dasharray="5,5"/>
+                
+                <!-- Activation boxes -->
+                <rect x="255" y="180" width="10" height="600" fill="#B0E0E6" stroke="#000" stroke-width="1"/>
+                <rect x="465" y="240" width="10" height="200" fill="#B0E0E6" stroke="#000" stroke-width="1"/>
+                <rect x="675" y="480" width="10" height="560" fill="#B0E0E6" stroke="#000" stroke-width="1"/>
+                
+                <!-- Messages -->
+                <!-- 1. Press Lock Button -->
+                <line x1="80" y1="180" x2="260" y2="180" stroke="#0000FF" stroke-width="2" marker-end="url(#arrowblue2)"/>
+                <text x="170" y="170" font-size="11" text-anchor="middle">Press Lock Button</text>
+                
+                <!-- 2. Request Authentication -->
+                <line x1="260" y1="240" x2="470" y2="240" stroke="#0000FF" stroke-width="2" marker-end="url(#arrowblue2)"/>
+                <text x="365" y="230" font-size="11" text-anchor="middle">Request Authentication</text>
+                
+                <!-- 3. Verify User -->
+                <line x1="470" y1="300" x2="880" y2="300" stroke="#0000FF" stroke-width="2" marker-end="url(#arrowblue2)"/>
+                <text x="675" y="290" font-size="11" text-anchor="middle">Verify User</text>
+                
+                <!-- 4. Return credentials -->
+                <line x1="880" y1="360" x2="470" y2="360" stroke="#0000FF" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowblue2)"/>
+                <text x="675" y="350" font-size="11" text-anchor="middle">Return: Physician</text>
+                
+                <!-- 5. Authentication Success -->
+                <line x1="470" y1="420" x2="260" y2="420" stroke="#0000FF" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowblue2)"/>
+                <text x="365" y="410" font-size="11" text-anchor="middle">Authentication Success</text>
+                
+                <!-- 6. Enable Lock Function -->
+                <line x1="260" y1="480" x2="680" y2="480" stroke="#0000FF" stroke-width="2" marker-end="url(#arrowblue2)"/>
+                <text x="470" y="470" font-size="11" text-anchor="middle">Enable Lock Function</text>
+                
+                <!-- 7. Disable Physical Buttons -->
+                <line x1="680" y1="540" x2="1090" y2="540" stroke="#0000FF" stroke-width="2" marker-end="url(#arrowblue2)"/>
+                <text x="885" y="530" font-size="11" text-anchor="middle">Disable Physical Buttons</text>
+                
+                <!-- 8. Confirm Disabled -->
+                <line x1="1090" y1="600" x2="680" y2="600" stroke="#0000FF" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowblue2)"/>
+                <text x="885" y="590" font-size="11" text-anchor="middle">Confirm Disabled</text>
+                
+                <!-- 9. Log Lock Event -->
+                <line x1="680" y1="660" x2="880" y2="660" stroke="#0000FF" stroke-width="2" marker-end="url(#arrowblue2)"/>
+                <text x="780" y="650" font-size="11" text-anchor="middle">Log Lock Event</text>
+                <rect x="620" y="670" width="260" height="30" fill="#FFFACD" stroke="#FFA500" stroke-width="1"/>
+                <text x="750" y="690" font-size="9" fill="#666" text-anchor="middle">(User ID, Timestamp, Device ID)</text>
+                
+                <!-- 10. Lock Activated -->
+                <line x1="680" y1="740" x2="260" y2="740" stroke="#0000FF" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowblue2)"/>
+                <text x="470" y="730" font-size="11" text-anchor="middle">Lock Activated</text>
+                
+                <!-- 11. Display Locked -->
+                <line x1="260" y1="800" x2="80" y2="800" stroke="#0000FF" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowblue2)"/>
+                <text x="170" y="790" font-size="11" text-anchor="middle">Display "Buttons Locked"</text>
+                
+                <!-- Note: Unauthorized attempt -->
+                <rect x="250" y="860" width="280" height="30" fill="#FFFACD" stroke="#FFA500" stroke-width="1"/>
+                <text x="390" y="880" font-size="10" fill="#FF0000" text-anchor="middle">[Physical button press attempt]</text>
+                
+                <!-- 12. Button Press Detected -->
+                <line x1="1090" y1="930" x2="680" y2="930" stroke="#0000FF" stroke-width="2" marker-end="url(#arrowblue2)"/>
+                <text x="885" y="920" font-size="11" text-anchor="middle">Button Press Detected</text>
+                
+                <!-- 13. Check Lock Status -->
+                <line x1="680" y1="990" x2="880" y2="990" stroke="#0000FF" stroke-width="2" marker-end="url(#arrowblue2)"/>
+                <text x="780" y="980" font-size="11" text-anchor="middle">Check Lock Status</text>
+                
+                <!-- 14. Status: Locked -->
+                <line x1="880" y1="1050" x2="680" y2="1050" stroke="#0000FF" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowblue2)"/>
+                <text x="780" y="1040" font-size="11" text-anchor="middle">Status: Locked</text>
+                
+                <!-- 15. Show Warning -->
+                <line x1="680" y1="1110" x2="260" y2="1110" stroke="#0000FF" stroke-width="2" marker-end="url(#arrowblue2)"/>
+                <text x="470" y="1100" font-size="11" text-anchor="middle">Show Warning Message</text>
+                <rect x="500" y="1120" width="280" height="30" fill="#FFFACD" stroke="#FFA500" stroke-width="1"/>
+                <text x="640" y="1140" font-size="9" fill="#FF0000" text-anchor="middle">"Device Locked - Authentication Required"</text>
+                
+                <!-- 16. Display Warning -->
+                <line x1="260" y1="1180" x2="80" y2="1180" stroke="#0000FF" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowblue2)"/>
+                <text x="170" y="1170" font-size="11" text-anchor="middle">Display Warning</text>
+                
+                <defs>
+                    <marker id="arrowblue2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L0,6 L9,3 z" fill="#0000FF"/>
+                    </marker>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="key-points">
+            <h3>Key Steps:</h3>
+            <ol>
+                <li>Physician presses lock button on device</li>
+                <li>System requests authentication</li>
+                <li>Authentication system verifies physician credentials from database</li>
+                <li>Upon successful authentication, button controller disables physical buttons</li>
+                <li>Lock event logged to database with user ID, timestamp, and device ID</li>
+                <li>Device displays "Buttons Locked" confirmation message</li>
+                <li>When physical button is pressed, system detects the attempt</li>
+                <li>Button controller checks lock status with database</li>
+                <li>System displays warning message: "Device Locked - Authentication Required"</li>
+            </ol>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Vital Signs Monitoring System - UML Diagrams</strong></p>
+        <p>Created for Software Engineering Assignment</p>
+        <p>Date: February 13, 2026</p>
+    </footer>
+</body>
+</html>
