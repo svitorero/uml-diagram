@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vital Signs Monitoring System - UML Diagrams</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin: 40px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            font-size: 1.8em;
+        }
+        
+        h3 {
+            color: #34495e;
+            margin: 25px 0 15px 0;
+            font-size: 1.3em;
+        }
+        
+        .toc {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 5px solid #3498db;
+        }
+        
+        .toc h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        
+        .toc a {
+            display: block;
+            padding: 10px 15px;
+            margin: 5px 0;
+            color: #3498db;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .toc a:hover {
+            background: #3498db;
+            color: white;
+            transform: translateX(10px);
+        }
+        
+        .features-list {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 25px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .features-list ol {
+            margin-left: 20px;
+        }
+        
+        .features-list li {
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+        
+        .features-list strong {
+            color: #2980b9;
+        }
+        
+        .section {
+            margin: 40px 0;
+            padding: 30px;
+            background: #fafafa;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .description {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #4caf50;
+        }
+        
+        .key-points {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #ff9800;
+        }
+        
+        .key-points ul, .key-points ol {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .key-points li {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        
+        .diagram-container {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .diagram-container img {
+            max-width: 100%;
+            height: auto;
+            border: 3px solid #ecf0f1;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .diagram-container img:hover {
+            transform: scale(1.02);
+        }
+        
+        .diagram-title {
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            border-radius: 8px 8px 0 0;
+            margin: 0 -20px 20px -20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+        
+        footer p {
+            margin: 5px 0;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+            
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            h2 {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏥 Vital Signs Monitoring System</h1>
+            <p>UML Diagrams - Software Engineering Assignment</p>
+            <div style="margin-top: 15px;">
+                <span class="badge">Use Case Diagram</span>
+                <span class="badge">Sequence Diagrams</span>
+                <span class="badge">System Design</span>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="toc">
+                <h3>📋 Table of Contents</h3>
+                <a href="#features">→ Five Major Features</a>
+                <a href="#usecase">→ Use Case Diagram</a>
+                <a href="#sequence1">→ Sequence Diagram: Alert Generation</a>
+                <a href="#sequence2">→ Sequence Diagram: Device Lock/Unlock</a>
+            </div>
+
+            <div class="section" id="features">
+                <h2>🎯 Five Major Features</h2>
+                <div class="features-list">
+                    <ol>
+                        <li>
+                            <strong>Real-Time Vital Signs Display</strong><br>
+                            Display current patient vital signs including oxygen saturation, heart rate, pulse, blood sugar level, and blood pressure on the device screen with automatic refresh capabilities.
+                        </li>
+                        
+                        <li>
+                            <strong>Alert and Notification System</strong><br>
+                            Generate audible and visual alerts when vital signs fall outside safe ranges, with automatic notifications sent to nurse station computers including patient and room details.
+                        </li>
+                        
+                        <li>
+                            <strong>Device Security and Access Control</strong><br>
+                            Provide physical button lock functionality to restrict device usage to authorized personnel only, preventing unauthorized changes to settings or patient data.
+                        </li>
+                        
+                        <li>
+                            <strong>Historical Data Management</strong><br>
+                            Store and retrieve vital signs history for configurable time periods, allowing healthcare providers to track patient trends and make informed medical decisions.
+                        </li>
+                        
+                        <li>
+                            <strong>Patient Profile Management</strong><br>
+                            Maintain patient information including name, room number, medical history, and custom threshold settings for vital sign alerts based on individual patient needs.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="section" id="usecase">
+                <h2>📊 1. Use Case Diagram</h2>
+                
+                <div class="description">
+                    <h3>Description</h3>
+                    <p>
+                        This use case diagram illustrates all actors in the Vital Signs Monitoring System and their interactions 
+                        with various system functionalities. The diagram shows both human actors (Nurse, Physician, Medical Technician) 
+                        and system actors (Nurse Station System, Data Storage System).
+                    </p>
+                </div>
+
+                <div class="diagram-container">
+                    <div class="diagram-title">Use Case Diagram</div>
+                    <img src="use_case_diagram.png" alt="Use Case Diagram - Vital Signs Monitoring System">
+                </div>
+
+                <div class="key-points">
+                    <h3>🔑 Key Actors and Their Interactions</h3>
+                    <ul>
+                        <li><strong>Nurse:</strong> Views vital signs, acknowledges alerts, locks/unlocks device buttons, views patient history</li>
+                        <li><strong>Physician:</strong> Views vital signs, configures alert thresholds, views history, generates reports, manages patient profiles</li>
+                        <li><strong>Medical Technician:</strong> Views vital signs, locks/unlocks device buttons</li>
+                        <li><strong>Nurse Station System:</strong> Receives alert notifications from the monitoring device</li>
+                        <li><strong>Data Storage System:</strong> Stores and retrieves vital signs data and historical information</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section" id="sequence1">
+                <h2>📈 2. Sequence Diagram: Alert Generation and Notification</h2>
+                
+                <div class="description">
+                    <h3>Scenario</h3>
+                    <p>
+                        This sequence diagram illustrates the complete workflow when a patient's oxygen saturation drops below 
+                        the safe threshold (90%). It shows the interactions between the sensor, monitoring device, alert manager, 
+                        alarm system, nurse station, and database.
+                    </p>
+                </div>
+
+                <div class="diagram-container">
+                    <div class="diagram-title">Sequence Diagram: Alert Generation and Notification</div>
+                    <img src="sequence_diagram1_alert.png" alt="Sequence Diagram - Alert Generation">
+                    <p style="margin-top: 15px; color: #666; font-style: italic;">
+                        Scenario: Patient's O2 saturation drops below threshold (90%)
+                    </p>
+                </div>
+
+                <div class="key-points">
+                    <h3>📝 Key Steps</h3>
+                    <ol>
+                        <li>Sensor reads oxygen level (88%)</li>
+                        <li>Monitoring device detects value below threshold (90%)</li>
+                        <li>Alert Manager triggers alarm at 85 decibels (audible outside room)</li>
+                        <li>Notification sent to Nurse Station with patient details (Room 305, John Doe, O2: 88%)</li>
+                        <li>Alert event logged to database with timestamp and patient information</li>
+                        <li>Nurse acknowledges alert from station</li>
+                        <li>Alarm stops and status updated in database with nurse ID and acknowledgment time</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="section" id="sequence2">
+                <h2>🔒 3. Sequence Diagram: Device Button Lock/Unlock</h2>
+                
+                <div class="description">
+                    <h3>Scenario</h3>
+                    <p>
+                        This sequence diagram shows the security workflow when a physician locks the device buttons to prevent 
+                        unauthorized access. It includes authentication, button disabling, logging, and handling of unauthorized 
+                        access attempts.
+                    </p>
+                </div>
+
+                <div class="diagram-container">
+                    <div class="diagram-title">Sequence Diagram: Device Button Lock/Unlock</div>
+                    <img src="sequence_diagram2_lock.png" alt="Sequence Diagram - Device Lock/Unlock">
+                    <p style="margin-top: 15px; color: #666; font-style: italic;">
+                        Scenario: Physician locks device buttons to prevent unauthorized changes
+                    </p>
+                </div>
+
+                <div class="key-points">
+                    <h3>📝 Key Steps</h3>
+                    <ol>
+                        <li>Physician presses lock button on device</li>
+                        <li>System requests authentication</li>
+                        <li>Authentication system verifies physician credentials from database</li>
+                        <li>Upon successful authentication, button controller disables physical buttons</li>
+                        <li>Lock event logged to database with user ID, timestamp, and device ID</li>
+                        <li>Device displays "Buttons Locked" confirmation message</li>
+                        <li>When physical button is pressed, system detects the attempt</li>
+                        <li>Button controller checks lock status with database</li>
+                        <li>System displays warning message: "Device Locked - Authentication Required"</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p><strong>Vital Signs Monitoring System - UML Diagrams</strong></p>
+            <p>Software Engineering Assignment</p>
+            <p>February 2026</p>
+            <p style="margin-top: 15px; opacity: 0.8;">
+                Includes: Use Case Diagram | 2 Sequence Diagrams | Complete System Documentation
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
